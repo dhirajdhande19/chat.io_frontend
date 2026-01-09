@@ -1,0 +1,38 @@
+
+/* .logo img{
+    width: 60px;
+} */
+
+.header .logo{
+    
+}
+
+/* .search{
+    margin-top: 2rem;
+    display:flex;
+} */
+
+.search,.header .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.search .btn{
+    /* background: #0077FF; */
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover{
+        background-color: oklch(75% 0.183 55.934);
+        transition: 0.3s;
+    }
+   
+}
+
+
+
