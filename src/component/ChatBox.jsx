@@ -15,7 +15,7 @@ export default function ChatBox({ chats }) {
               // incoming messages
               <li
                 className="bg-blue-400 text-white p-1"
-                key={c._id || Math.random()}
+                key={c._id || crypto.randomUUID()}
               >
                 {c.message} - {dayjs(c.createdAt).fromNow()}
               </li>
@@ -23,7 +23,7 @@ export default function ChatBox({ chats }) {
               // my messages
               <li
                 className="bg-emerald-400 text-white p-1"
-                key={c._id || Math.random()}
+                key={c._id || crypto.randomUUID()}
               >
                 {c.message} - {dayjs(c.createdAt).fromNow()}
               </li>
