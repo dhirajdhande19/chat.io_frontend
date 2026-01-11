@@ -33,7 +33,9 @@ export default function UsersList() {
           {allUsers.map((u) => (
             <li key={u._id}>
               {u.name} <br />
-              <img height={150} src={u.imageUrl} alt="user-pfp" />
+              {u.imageUrl ? (
+                <img height={150} src={u.imageUrl} alt="user-pfp" />
+              ) : null}
               <button
                 className="bg-sky-500 hover:bg-sky-700 text-white cursor-pointer p-1 border-r-4"
                 onClick={() => navigate(`/users/${u._id}`)}
