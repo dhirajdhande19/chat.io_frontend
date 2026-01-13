@@ -69,7 +69,9 @@ export default function UsersList() {
 
               {/* Chat button */}
               <button
-                onClick={() => navigate(`/users/${u._id}`)}
+                onClick={() => {
+                  return navigate(`/users/${u._id}`);
+                }}
                 className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-5 py-2 rounded-xl font-medium shadow-sm transition-all"
               >
                 Chat
