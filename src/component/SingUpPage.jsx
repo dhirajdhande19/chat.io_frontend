@@ -12,7 +12,7 @@ export default function SingUpPage({singUpCancel}) {
 
   return (
     <div className="shadow-xl transition delay-150 h-auto bg-orange-50 flex justify-center align-center w-[350px] absolute top-40  rounded-2xl md:left-50 lg:left-160">
-      <form action="#" className="">
+      <form action="http://localhost:8000/api/auth/register" method="post" className="">
         
         <h1 className="text-center text-2xl mb-10 mt-5">
           Sing<span className="text-orange-600">Up</span>
@@ -36,6 +36,7 @@ export default function SingUpPage({singUpCancel}) {
         </label>
         <input
           type="file"
+          name="imageUrl"
           accept="image/*"
           onChange={handleImageChange}
           className="block ml-10 w-30 text-sm text-gray-500
@@ -52,18 +53,21 @@ export default function SingUpPage({singUpCancel}) {
         <div className="input ml-7">
           <input
             type="text"
+            name="name"
             className="border-2 border-orange-500 rounded-lg pl-2 focus:border-orange-600 w-75 text-base/9 mt-4"
             placeholder="UserName"
             required
           />
           <input
             type="email"
+            name="email"
             className="border-2 border-orange-500 rounded-lg pl-2 focus:border-orange-600 w-75 text-base/9 mt-4"
             placeholder="Email"
             required
           />
           <input
             type="password"
+            name="password"
             className="border-2 border-orange-500 rounded-lg pl-2 focus:border-orange-600 w-75 text-base/9 mt-4"
             placeholder="Password"
             required
