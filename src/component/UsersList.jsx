@@ -21,31 +21,63 @@ export default function UsersList() {
   }, []);
 
   return (
-    <>
-      <h1>All Users / Friends</h1>
+    <div className="min-h-screen bg-white px-6 py-8">
+      {/* Page Header */}
+      <div className="mb-8">
+        <h1 className="text-4xl font-bold text-gray-900">All Users</h1>
+        <p className="text-gray-500 mt-1">Start a conversation with anyone</p>
+      </div>
 
-      {error && <p className="text-red-500 text-xl">{error}</p>}
+      {error && (
+        <p className="mb-4 text-red-500 text-lg font-medium">{error}</p>
+      )}
 
       {allUsers.length === 0 ? (
-        <p>No users found</p>
+        <div className="text-gray-400 text-center mt-20 text-lg">
+          No users found
+        </div>
       ) : (
-        <ul>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {allUsers.map((u) => (
-            <li key={u._id}>
-              {u.name} <br />
-              {u.imageUrl ? (
-                <img height={150} src={u.imageUrl} alt="user-pfp" />
-              ) : null}
+            <div
+              key={u._id}
+              className="bg-white rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition-all p-5 flex items-center justify-between"
+            >
+              {/* Left side (avatar + name) */}
+              <div className="flex items-center gap-4">
+                <div className="w-14 h-14 rounded-full bg-orange-100 flex items-center justify-center overflow-hidden">
+                  {u.imageUrl ? (
+                    <img
+                      src={u.imageUrl}
+                      alt="user"
+                      className="w-full h-full object-cover"
+                    />
+                  ) : (
+                    <span className="text-orange-500 font-bold text-xl">
+                      {u.name.charAt(0).toUpperCase()}
+                    </span>
+                  )}
+                </div>
+
+                <div>
+                  <p className="text-lg font-semibold text-gray-900">
+                    {u.name}
+                  </p>
+                  <p className="text-sm text-gray-400">Chat.io user</p>
+                </div>
+              </div>
+
+              {/* Chat button */}
               <button
-                className="bg-sky-500 hover:bg-sky-700 text-white cursor-pointer p-1 border-r-4"
                 onClick={() => navigate(`/users/${u._id}`)}
+                className="bg-orange-500 cursor-pointer hover:bg-orange-600 text-white px-5 py-2 rounded-xl font-medium shadow-sm transition-all"
               >
                 Chat
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
-    </>
+    </div>
   );
 }

@@ -5,34 +5,44 @@ dayjs.extend(relativeTime);
 
 export default function ChatBox({ chats }) {
   const { id } = useParams();
+
   return (
-    <>
-      <h2>Your Prev Chats</h2>
-      <ul>
-        {chats && chats.length > 0 ? (
+    <div className="flex-1 overflow-y-auto bg-gray-50 px-4 py-6">
+      <div className="space-y-4 max-w-4xl mx-auto">
+        {chats.length > 0 ? (
           chats.map((c) =>
             c.senderId === id ? (
-              // incoming messages
-              <li
-                className="bg-blue-400 text-white p-1"
+              <div
                 key={c._id || crypto.randomUUID()}
+                className="flex justify-start"
               >
-                {c.message} - {dayjs(c.createdAt).fromNow()}
-              </li>
+                <div className="bg-white border border-gray-200 px-4 py-2 rounded-2xl shadow-sm max-w-[70%]">
+                  <p>{c.message}</p>
+                  <p className="text-xs text-gray-400 mt-1">
+                    {dayjs(c.createdAt).fromNow()}
+                  </p>
+                </div>
+              </div>
             ) : (
-              // my messages
-              <li
-                className="bg-emerald-400 text-white p-1"
+              <div
                 key={c._id || crypto.randomUUID()}
+                className="flex justify-end"
               >
-                {c.message} - {dayjs(c.createdAt).fromNow()}
-              </li>
+                <div className="bg-orange-500 text-white px-4 py-2 rounded-2xl shadow-sm max-w-[70%]">
+                  <p>{c.message}</p>
+                  <p className="text-xs text-orange-100 mt-1 text-right">
+                    {dayjs(c.createdAt).fromNow()}
+                  </p>
+                </div>
+              </div>
             )
           )
         ) : (
-          <p>Start the convo ?</p>
+          <p className="text-center text-gray-400 mt-20">
+            Start the conversation 👋
+          </p>
         )}
-      </ul>
-    </>
+      </div>
+    </div>
   );
 }

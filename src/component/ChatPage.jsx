@@ -41,8 +41,12 @@ export default function ChatPage() {
 
     s.on('connect', () => {
       console.log('Socket connection established');
-      // init chat
-      s.emit('chat-init', id);
+    });
+
+    s.on('online-users', (users) => {
+      if (users.includes(id)) {
+        setIsOnline(true);
+      }
     });
 
     s.on('user-status', (data) => {
@@ -70,16 +74,43 @@ export default function ChatPage() {
   }, [id, token]);
 
   return (
-    <>
-      <ChatBox chats={chats} />
-      <ChatForm
-        socket={socket}
-        id={id}
-        isOnline={isOnline}
-        error={error}
-        setError={setError}
-        setChats={setChats}
-      />
-    </>
+    <div className="h-screen bg-white flex flex-col">
+      {/* Header */}
+      <div className="border-b border-gray-100 px-6 py-4 flex items-center justify-between">
+        <h1
+          className="text-2xl font-bold text-gray-900 cursor-pointer"
+          onClick={() => {
+            return navigate('/users');
+          }}
+        >
+          Chat.io
+        </h1>
+        <span className="text-sm text-gray-400">Secure Messaging</span>
+      </div>
+
+      {/* Chat container */}
+      <div className="flex-1 flex flex-col max-w-4xl mx-auto w-full">
+        <ChatForm
+          socket={socket}
+          id={id}
+          isOnline={isOnline}
+          error={error}
+          setError={setError}
+          setChats={setChats}
+          headerOnly
+        />
+
+        <ChatBox chats={chats} />
+
+        <ChatForm
+          socket={socket}
+          id={id}
+          isOnline={isOnline}
+          error={error}
+          setError={setError}
+          setChats={setChats}
+        />
+      </div>
+    </div>
   );
 }
