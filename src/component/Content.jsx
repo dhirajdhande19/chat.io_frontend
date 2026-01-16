@@ -39,7 +39,7 @@ export default function Content() {
             conversations.Connect with friends instantly, see whoʼs online, and
             chat without delays — powered by modern web technologies.{' '}
             <button
-              className="p-2 px-7 bg-orange-400 cursor-pointer rounded-lg text-sm"
+              className="p-2 text-white px-7 bg-orange-400 cursor-pointer rounded-lg text-sm"
               onClick={() => {
                 return navigate('/users');
               }}
