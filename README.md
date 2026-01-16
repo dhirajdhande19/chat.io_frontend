@@ -4,6 +4,8 @@ This repository contains the **frontend** of a real-time chat application built 
 
 The frontend supports **JWT authentication, Google OAuth login/register, real-time chat UI, and live user status updates**, and is deployed on **Vercel**.
 
+ Link: [Chat.io](https://chat-io-frontend.vercel.app)
+ 
 ---
 
 ## 🚀 Features
