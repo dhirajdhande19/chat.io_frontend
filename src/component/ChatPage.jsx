@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getToken } from '../utils/token';
 import { io } from 'socket.io-client';
-import api from '../api/axios';
+import api, { socketBackendUrl } from '../api/axios';
 import ChatBox from './ChatBox';
 import ChatForm from './ChatForm';
 
@@ -36,7 +36,7 @@ export default function ChatPage() {
 
   // socket setup
   useEffect(() => {
-    const s = io('http://localhost:8000', { auth: { token } });
+    const s = io(`${socketBackendUrl}`, { auth: { token } });
 
     s.on('connect', () => {
       console.log('Socket connection established');
