@@ -16,12 +16,11 @@ export default function ChatPage() {
   const [isOnline, setIsOnline] = useState(false);
   const [error, setError] = useState('');
 
-  if (!token) {
-    return navigate('/auth', { replace: true });
-  }
-
   // fetch previous chats
   useEffect(() => {
+    if (!token) {
+      return navigate('/');
+    }
     const getPrevChats = async () => {
       const res = await api.get(`/chats/${id}`, {
         headers: { Authorization: `Bearer ${token}` },

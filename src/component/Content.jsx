@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import SingUpPage from './SingUpPage';
+import SignUpPage from './SignUpPage';
 import Login from './Login';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,25 +8,25 @@ export default function Content() {
   const [Toggle, setToggle] = useState('false');
   const [Toggle2, setToggle2] = useState('false');
   const navigate = useNavigate();
-  const singUp = () => {
+  const signUp = () => {
     setToggle('true');
     let loginId = document.getElementById('login-btn');
     loginId.disabled = true;
   };
-  const singUpCancel = () => {
+  const signUpCancel = () => {
     setToggle('false');
     let loginId = document.getElementById('login-btn');
     loginId.disabled = false;
   };
   const login = () => {
     setToggle2('true');
-    let singUpId = document.getElementById('singUp-btn');
-    singUpId.disabled = true;
+    let signUpId = document.getElementById('signUp-btn');
+    signUpId.disabled = true;
   };
   const loginCancel = () => {
     setToggle2('false');
-    let singUpId = document.getElementById('singUp-btn');
-    singUpId.disabled = false;
+    let signUpId = document.getElementById('signUp-btn');
+    signUpId.disabled = false;
   };
 
   return (
@@ -48,12 +48,12 @@ export default function Content() {
             </button>
           </p>
           <div className="btn">
-            {Toggle == 'true' ? <SingUpPage singUpCancel={singUpCancel} /> : ''}
+            {Toggle == 'true' ? <SignUpPage signUpCancel={signUpCancel} /> : ''}
             {Toggle2 == 'true' ? <Login loginCancel={loginCancel} /> : ''}
 
             <button
-              id="singUp-btn"
-              onClick={singUp}
+              id="signUp-btn"
+              onClick={signUp}
               className="bg-orange-400 p-2 px-7 disabled:cursor-not-allowed mt-5 cursor-pointer rounded-lg text-sm text-red-50"
             >
               SignUp
