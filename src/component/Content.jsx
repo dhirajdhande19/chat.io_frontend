@@ -70,7 +70,7 @@ export default function Content() {
         </div>
         <div className="logo">
           <img
-            src="../src/assets/logo.png"
+            src="logo.png"
             alt="logo png error"
             className="h-96 sm:h-70 sm:w-64 md:w-100 md: "
           />

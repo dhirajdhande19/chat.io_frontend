@@ -92,7 +92,7 @@ export default function SignUpPage({ loginCancel }) {
         >
           <div className="ml-25 text-gray-600">login with</div>
           <img
-            src="../src/assets/google-color.png"
+            src="google-color.png"
             alt=""
             className="w-6 h-6 mt-[8px] ml-2"
           />
