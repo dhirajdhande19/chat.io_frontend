@@ -1,16 +1,84 @@
-# React + Vite
+# Frontend – Real-Time Chat Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the **frontend** of a real-time chat application built using **React**.
 
-Currently, two official plugins are available:
+The frontend supports **JWT authentication, Google OAuth login/register, real-time chat UI, and live user status updates**, and is deployed on **Vercel**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ Link: [Chat.io](https://chat-io-frontend.vercel.app)
+ 
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔐 Authentication UI  
+  - Login & Register  
+  - Google OAuth 2.0 Login & Register  
 
-## Expanding the ESLint configuration
+- 💬 Real-Time Chat Interface  
+  - Instant messaging using Socket.IO  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🟢 User Status  
+  - Online / Offline indicators  
+
+- 🔄 Persistent Sessions  
+  - JWT-based authentication  
+
+- 📱 Responsive Design  
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework**: React  
+- **State Management**: React Hooks  
+- **Authentication**: JWT + Google OAuth 2.0  
+- **Real-Time Communication**: Socket.IO Client  
+- **Deployment**: Vercel  
+
+---
+
+## ⚙️ Environment Variables
+
+Create a `.env` file:
+
+````js
+// if port is on 8000
+VITE_BACKEND_URL='http://localhost:8000/api'
+VITE_SOCKET_URL="http://localhost:8000"
+
+````
+
+---
+
+## ▶️ Running Locally
+
+```bash
+npm install
+npm run dev
+````
+
+---
+
+## 🌐 Deployment
+
+* Frontend deployed on **Vercel**
+* Connected to backend hosted on **Render**
+
+---
+
+## 👥 Team Members
+
+* **Dhiraj Dhande**   
+  GitHub: [dhirajdhande19](https://github.com/dhirajdhande19)
+
+* **Avishkar**   
+  GitHub: [Avishkar1426](https://github.com/Avishkar1426)
+
+* **Santosh**  
+  GitHub: [Sahilganvir123](https://github.com/Sahilganvir123)
+
+---
+
+## 📄 License
+This project is for educational and portfolio use.
+
