@@ -13,7 +13,7 @@ export default function Header() {
     <div className="header grid grid-cols-6 ">
       {/* <h1>hello</h1> */}
         <div className="logo w-19 mt-2 sm:w-25 col-start-1 md:ml-9 sm:pr-5">
-         <img src="../src/assets/logo.png" alt="logo img error" className='w-14 sm:w-20 md:w-25' />
+         <img src="logo.png" alt="logo img error" className='w-14 sm:w-20 md:w-25' />
         </div>
 
         
